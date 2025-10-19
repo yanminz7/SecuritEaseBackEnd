@@ -1,0 +1,13 @@
+<suite name="Parallel Test Suite" parallel="methods"
+       thread-count="1">
+
+    <listeners>
+        <listener  class-name="interview.TestNGListener"/>
+    </listeners>
+
+    <test name="API Tests">
+        <classes>
+            <class name="interview.CountriesAPITest"/>
+        </classes>
+    </test>
+</suite>

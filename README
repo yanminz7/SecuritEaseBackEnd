@@ -1,0 +1,74 @@
+# REST Assured + TestNG API Automation Framework
+
+This project is  **API test automation framework** built using **REST Assured**, **TestNG**, and **Java**. 
+
+## Tech Stack
+
+- [REST Assured](https://rest-assured.io/) – API testing library for Java
+- [TestNG](https://testng.org/) – Testing framework for running and managing tests
+- [JSON] – For JSON parsing 
+- [Log4j2] - For log files
+- [Extent Reports ] – For test reporting
+- [Maven] – Project build and dependency management
+
+
+## Project Structure
+project-root/
+
+├── src      
+│    └── main/
+│    │    └── java/
+│    │          └── com/
+│	 │	             └── api/
+│    │                    ├── config/   
+│    │                    │      └── GlobalConfiguration.java      # Load configuration
+│	 │	   	  	          │
+│    │                    └── model/                            
+│    │                           ├── BaseRequest.java              # Base Request class that encapsulate the common behaviours
+│	 │			                 ├── GetRequest.java               # Get Request that extends the Base Request
+│	 │			                 └── PostRequest.java
+│    │
+│    └── test/                      
+│         ├── java                                   
+│         │    └──interview                    
+│         │            ├── BaseTest.java 			    # Base Test class that encapsulate the common behaviours
+│         │            ├── CountriesAPITest		        # Test scenarios
+│         │            └── TestNGListener				# TestNGListener that log test lifecycle and integrates ExtentReports   
+│         └── resources
+│               ├──schema                                  
+│               │    └──restcountries_schema.json       # schema
+│			    ├── config.properties                   # configuration file for Base URL 
+│			    └── log4j2.xml                          # log4j2 configuration file
+│
+│
+│
+├── logs
+│     └── test.log                     # log file
+│
+├── target
+│     └── report.html                  # Report
+├── Dockerfile                     
+├── testng.xml                         # TestNG suite definition
+│
+├── pom.xml                            # Maven project descriptor
+└── README
+
+Prerequisites
+
+  Java 11
+  Maven
+  IDE (e.g. IntelliJ, Eclipse)
+  
+Install dependencies
+  mvn clean install
+  
+Run all tests
+  mvn test
+  
+  
+## Docker (win10)
+In project-root：
+docker build -t securitease_api-testng:latest .
+docker run --rm -v "%cd%\reports:/app/target" securitease_api-testng:latest
+map /app/target to reports
+	

@@ -1,0 +1,4 @@
+com\api\model\PostRequest.class
+com\api\config\GlobalConfiguration.class
+com\api\model\BaseRequest.class
+com\api\model\GetRequest.class
