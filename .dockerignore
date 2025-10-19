@@ -4,6 +4,3 @@ target
 .git
 *.iml
 *.log
-logs
-reports
--Force
